@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const NAV_LINKS = [
-  { id: 'home', name: 'Home', path: '/' },
-  { id: 'products', name: 'Products', path: '/products' },
+  { id: 'home', name: 'Home', path: '#home' },
+  { id: 'product', name: 'Products', path: '/product', isExternal: true },
   { id: 'clients', name: 'Clients', path: '#clients' },
   { id: 'contact', name: 'Contact', path: '#contact' },
-  { id: 'transport', name: 'Transport', path: '/transport' }
+  { id: 'transport', name: 'Transport', path: '/transport', isExternal: true }
 ];
 
 const useScrollSpy = (sectionIds) => {
@@ -47,10 +48,10 @@ const scrollToSection = (sectionId) => {
   }
 };
 
-const Navbar = () => {
+const HomeNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const activeSection = useScrollSpy(NAV_LINKS.map(link => link.id));
+  const activeSection = useScrollSpy(NAV_LINKS.filter(link => !link.isExternal).map(link => link.id));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,10 +62,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (sectionId, path) => {
-    if (path.startsWith('#')) {
-      scrollToSection(sectionId);
+  const handleNavClick = (link) => {
+    if (link.isExternal) {
+      return;
     }
+    scrollToSection(link.id);
     setIsMenuOpen(false);
   };
 
@@ -103,9 +105,9 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-xl">ME</span>
+            <div className="flex items-center">
+               <div className="w-16 h-16 rounded-lg flex items-center justify-center">
+                <img src="/favicon.png" alt="Logo" />
               </div>
               <div>
                 <button 
@@ -122,27 +124,37 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className='hidden lg:flex items-center gap-8'>
             {NAV_LINKS.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNavClick(link.id, link.path)}
-                className={`text-base font-semibold transition-all duration-300 relative pb-1 ${
-                  activeSection === link.id
-                    ? 'text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
-                }`}
-              >
-                {link.name}
-                {activeSection === link.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
-                )}
-              </button>
+              link.isExternal ? (
+                <Link
+                  key={link.id}
+                  to={link.path}
+                  className="text-base font-semibold transition-all duration-300 text-gray-700 hover:text-blue-600"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavClick(link)}
+                  className={`text-base font-semibold transition-all duration-300 relative pb-1 ${
+                    activeSection === link.id
+                      ? 'text-blue-600'
+                      : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                >
+                  {link.name}
+                  {activeSection === link.id && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
+                  )}
+                </button>
+              )
             ))}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-2">
             <button 
-              onClick={() => handleNavClick('contact', '#contact')}
+              onClick={() => scrollToSection('contact')}
               className="bg-blue-600 text-white px-6 py-3 font-semibold rounded-md hover:bg-blue-700 transition-colors duration-300 shadow-md hover:shadow-lg"
             >
               Get Quote
@@ -169,24 +181,38 @@ const Navbar = () => {
       >
         <div className="bg-white px-4 py-6 space-y-2">
           {NAV_LINKS.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => handleNavClick(link.id, link.path)}
-              className={`block w-full text-left px-4 py-3 rounded-md font-semibold transition-all duration-300 ${
-                activeSection === link.id
-                  ? 'text-blue-600 bg-blue-50'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-              }`}
-            >
-              {link.name}
-            </button>
+            link.isExternal ? (
+              <Link
+                key={link.id}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-left px-4 py-3 rounded-md font-semibold transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              >
+                {link.name}
+              </Link>
+            ) : (
+              <button
+                key={link.id}
+                onClick={() => handleNavClick(link)}
+                className={`block w-full text-left px-4 py-3 rounded-md font-semibold transition-all duration-300 ${
+                  activeSection === link.id
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                {link.name}
+              </button>
+            )
           ))}
 
           <button
-            onClick={() => handleNavClick('contact', '#contact')}
+            onClick={() => {
+              scrollToSection('contact');
+              setIsMenuOpen(false);
+            }}
             className='w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors duration-300 mt-4 shadow-md'
           >
-            Get Quote
+            <a href="#contact">Get Quote</a>
           </button>
         </div>
       </div>
@@ -194,4 +220,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HomeNavbar;
