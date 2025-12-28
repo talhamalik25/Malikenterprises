@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Package, Truck, Shield, Shirt, HardHat, Box } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 
 // FAQ Categories with icons
 const FAQ_CATEGORIES = [
@@ -223,7 +225,7 @@ const FAQsSection = () => {
               Our team is here to help. Contact us for personalized assistance.
             </p>
             <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2">
-              <a href="#contact">Contact Us</a>
+              <Link to="#contact">Contact Us</Link>
             </button>
           </div>
         </FadeInWhenVisible>

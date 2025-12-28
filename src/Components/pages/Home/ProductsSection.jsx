@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PRODUCTS = [
   {
@@ -170,10 +171,7 @@ const ProductsSection = () => {
         <FadeInWhenVisible delay={600}>
           <div className="text-center">
             <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl inline-flex items-center gap-2 group">
-              <a href="/Product">
-                View More
-
-              </a>
+              <Link to="/Product">View More</Link>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
           </div>

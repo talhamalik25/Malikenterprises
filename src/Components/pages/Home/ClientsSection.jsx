@@ -6,42 +6,42 @@ const CLIENTS = [
   {
     id: 1,
     name: "International Container Terminal (KICT)",
-    logo: "/src/assets/Client1.png"
+    logo: "/assets/Client1.png"
   },
   {
     id: 2,
     name: "Bahria Town Karachi",
-    logo: "src/assets/Client3.png"
+    logo: "/assets/Client3.png"
   },
   {
     id: 3,
     name: "South Asia Pakistan Terminals (SAPT)",
-    logo: "src/assets/Client5.png"
+    logo: "/assets/Client5.png"
   },
   {
     id: 4,
     name: "Perfect Transport Network (PTN)",
-    logo: "src/assets/Client7.png"
+    logo: "/assets/Client7.png"
   },
   {
     id: 5,
     name: "Shaheen Freight Services",
-    logo: "src/assets/Client6.png"
+    logo: "/assets/Client6.png"
   },
   {
     id: 6,
     name: "Pakistan Rangers",
-    logo: "src/assets/Client8.png"
+    logo: "/assets/Client8.png"
   },
   {
     id: 7,
     name: "Dow University of Health Sciences (DUHS)",
-    logo: "src/assets/Client4.png"
+    logo: "/assets/Client4.png"
   },
   {
     id: 8,
     name: "Mamji Hospital",
-    logo: "src/assets/Client2.png"
+    logo: "/assets/Client2.png"
   }
 ];
 

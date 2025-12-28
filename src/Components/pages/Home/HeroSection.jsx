@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 
 // Hero Images
 const HERO_IMAGES = [
@@ -38,8 +40,8 @@ const FadeInUp = ({ children, delay = 0 }) => {
     <div
       ref={ref}
       className={`transition-all duration-1000 ${isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
+        ? 'opacity-100 translate-y-0'
+        : 'opacity-0 translate-y-10'
         }`}
     >
       {children}
@@ -120,17 +122,19 @@ const HeroSection = () => {
                 style={{ animationDelay: '0.8s', animationFillMode: 'both' }}
               >
                 <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
-                  <a href="/Product">
+                  <Link to="/Product">
                     View Products
-                  </a>
+                  </Link>
                   <ArrowRight className="w-5 h-5" />
                 </button>
+
                 <button className="px-8 py-4 bg-white text-slate-900 font-semibold rounded-md hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                   <a href="#contact">
+                  <Link to="#contact">
                     Contact us
-                  </a>
+                  </Link>
                 </button>
+
               </div>
 
             </div>
@@ -159,8 +163,8 @@ const HeroSection = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`h-1 rounded-full transition-all duration-300 ${index === currentSlide
-                  ? 'w-12 bg-blue-500'
-                  : 'w-8 bg-white/50 hover:bg-white/80'
+                ? 'w-12 bg-blue-500'
+                : 'w-8 bg-white/50 hover:bg-white/80'
                 }`}
             />
           ))}

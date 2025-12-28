@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, ArrowRight, Facebook, Twitter, Instagram, Linkedin, Truck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const SERVICES = [
   'Loader Transport',
