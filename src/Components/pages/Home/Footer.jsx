@@ -17,7 +17,7 @@ const PRODUCT_CATEGORIES = [
   'Safety Shoes'
 ];
 
-const QUICK_LINKS = [
+const  QUICK_LINKS = [
   { name: 'Home', path: '#home' },
   { name: 'Products', path: '#products' },
   { name: 'Clients', path: '#clients' },
@@ -157,7 +157,17 @@ const Footer = () => {
                 </div>
               </Link>
 
-            </div>
+               <div className="flex items-start gap-3 text-gray-400">
+                              <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <MapPin className="w-5 h-5" />
+                              </div>
+                              <div>
+                                <p className="text-sm text-gray-500">Location</p>
+                                <p className="font-semibold">Malikenterprices - Oxford Corner, Kharadar</p>
+                              </div>
+                            </div>
+
+            </div> 
           </div>
 
         </div>
