@@ -224,9 +224,11 @@ const FAQsSection = () => {
             <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
               Our team is here to help. Contact us for personalized assistance.
             </p>
+            <a href="#contact">
             <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2">
-              <Link to="#contact">Contact Us</Link>
+             Contact Us
             </button>
+            </a>
           </div>
         </FadeInWhenVisible>
 

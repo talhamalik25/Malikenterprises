@@ -172,26 +172,30 @@ const TransportFooter = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
       <p className="text-gray-400 text-sm text-center md:text-left">
-        © {currentYear} Malik Enterprises. All Rights Reserved.
+        © {currentYear} Arif Malik & Sons. All Rights Reserved.
       </p>
-      <div className="flex items-center gap-1">
+      <div className="flex flex-col sm:flex-row items-center gap-1">
         <p className="text-gray-400 text-sm">
-          Designed by <span className="text-orange-400 font-semibold">Talha Malik</span>
+          Developed by
+          <span className="text-orange-400 font-semibold ml-1">
+            Talha Malik
+          </span>
         </p>
-        {/* WhatsApp CTA */}
-        <a
-          href="https://wa.me/923142209297" // replace with your WhatsApp number
+      
+        <Link
+          to="https://wa.me/923142209297"
           target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 text-white text-sm font-semibold rounded-lg shadow transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg shadow transition-transform active:scale-95"
         >
-          <img 
-  src="/whatsapplogo.png" 
-  alt="WhatsApp Logo" 
-  className="w-10 h-10 md:w-8 md:h-8 sm:w-6 sm:h-6 active:scale-95 hover:scale-95 transition-transform duration-200"
-/>
-
-        </a>
+          <img
+            src="/whatsapplogo.png"
+            alt="WhatsApp Logo"
+            className="w-7 h-7 sm:w-8 sm:h-8"
+          />
+          <span className="sm:inline text-green-400 text-sm font-medium">
+      WhatsApp
+    </span>
+        </Link>
       </div>
     </div>
   </div>

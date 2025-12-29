@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Truck, Shield, Package } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 // FAQ Categories
 const FAQ_CATEGORIES = [
@@ -231,9 +230,11 @@ const TransportFAQs = () => {
             <p className="text-gray-600 mb-6">
               Our transport specialists are here to help. Contact us for personalized assistance.
             </p>
+            <a href="#contact">
             <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg">
-              <Link to="#contact">Contact Us</Link>
+              Contact Us
             </button>
+            </a>
           </div>
         </FadeInWhenVisible>
 

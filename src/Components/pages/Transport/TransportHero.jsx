@@ -95,15 +95,46 @@ const TransportHero = () => {
               <div 
                 className="flex flex-wrap gap-4 animate-fade-in-up"
                 style={{ animationDelay: '0.8s', animationFillMode: 'both' }}
-              >
-                <button className="px-8 py-4 bg-orange-600 text-white font-semibold rounded-md hover:bg-orange-700 hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-xl">
-                  <a href="#services">Our Services</a>
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="px-8 py-4 bg-white text-slate-900 font-semibold rounded-md hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <a href="#contact">Contact Us</a>
-                </button>
+              ><a href="#services">
+                <button
+  className="
+    px-5 py-3 text-sm
+    sm:px-6 sm:py-3 sm:text-base
+    md:px-8 md:py-4 md:text-lg
+    bg-orange-600 text-white font-semibold
+    rounded-md
+    flex items-center justify-center gap-2
+    transition-all duration-300
+    shadow-md
+    hover:bg-orange-700 hover:shadow-xl
+    active:scale-95 md:hover:scale-105
+  "
+>
+  Our Services
+  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+</button>
+
+                </a>
+                 <a href="#contact">
+                <button
+  className="
+    px-5 py-3 text-sm
+    sm:px-6 sm:py-3 sm:text-base
+    md:px-8 md:py-4 md:text-lg
+    bg-white text-slate-900 font-semibold
+    rounded-md
+    flex items-center justify-center gap-2
+    transition-all duration-300
+    shadow-md
+    hover:bg-gray-100 hover:shadow-xl
+    active:scale-95 md:hover:scale-105
+  "
+>
+  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+  Contact Us
+</button>
+
+                </a>
               </div>
 
             </div>

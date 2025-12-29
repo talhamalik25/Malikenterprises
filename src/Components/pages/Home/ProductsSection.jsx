@@ -83,8 +83,8 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
     <div
       ref={ref}
       className={`transition-all duration-1000 ${isVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
+        ? 'opacity-100 translate-y-0'
+        : 'opacity-0 translate-y-10'
         }`}
     >
       {children}
@@ -170,10 +170,12 @@ const ProductsSection = () => {
         {/* See More Button */}
         <FadeInWhenVisible delay={600}>
           <div className="text-center">
-            <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl inline-flex items-center gap-2 group">
-              <Link to="/Product">View More</Link>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
+            <Link to="/Product">
+              <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-xl inline-flex items-center gap-2 group">
+                View More
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </Link>
           </div>
         </FadeInWhenVisible>
 

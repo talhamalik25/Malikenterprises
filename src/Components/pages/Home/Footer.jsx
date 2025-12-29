@@ -73,13 +73,14 @@ const Footer = () => {
             <ul className="space-y-3">
               {PRODUCT_CATEGORIES.slice(0, 8).map((category, index) => (
                 <li key={index}>
-                  <Link
-                    to="#products"
-                    className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
-                  >
-                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {category}
-                  </Link>
+                 <a
+  href=""
+  className="text-gray-400 hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
+>
+  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+  {category}
+</a>
+
                 </li>
               ))}
             </ul>
@@ -170,16 +171,31 @@ const Footer = () => {
               © {currentYear} Malik Enterprises. All Rights Reserved.
             </p>
 
-            <Link
-              to="https://wa.me/923142209297"
-              className="inline-flex items-center px-4 py-2 text-white text-sm font-semibold rounded-lg shadow transition-colors"
-            >
-              <img
-                src="/whatsapplogo.png"
-                alt="WhatsApp Logo"
-                className="w-10 h-10 md:w-8 md:h-8 sm:w-6 sm:h-6 active:scale-95 hover:scale-95 transition-transform duration-200"
-              />
-            </Link>
+           <div className="flex flex-col sm:flex-row items-center gap-1">
+                  <p className="text-gray-400 text-sm">
+                    Developed by
+                    <span className="text-blue-400 font-semibold ml-1">
+                      Talha Malik
+                    </span>
+                  </p>
+                
+                  <Link
+                    to="https://wa.me/923142209297"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg shadow transition-transform active:scale-95"
+                  >
+                    <img
+                      src="/whatsapplogo.png"
+                      alt="WhatsApp Logo"
+                      className="w-7 h-7 sm:w-8 sm:h-8"
+                    />
+                    <span className="sm:inline text-green-400 text-sm font-medium">
+                WhatsApp
+              </span>
+                  </Link>
+                </div>
+
+
           </div>
         </div>
       </div>
