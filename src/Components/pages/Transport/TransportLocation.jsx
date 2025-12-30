@@ -54,12 +54,6 @@ const CONTACT_INFO = [
     link: 'tel:03331230531'
   },
   {
-    icon: Mail,
-    title: 'Email Address',
-    details: 'arifmaliknsons@gmail.com',
-    link: 'mailto:arifmaliknsons@gmail.com'
-  },
-  {
     icon: Clock,
     title: 'Working Hours',
     details: 'Mon - Sat: 9:00 AM - 6:00 PM',
@@ -161,34 +155,6 @@ const TransportLocation = () => {
           </FadeInWhenVisible>
 
         </div>
-
-        {/* Bottom CTA */}
-        <FadeInWhenVisible delay={500}>
-          <div className="mt-16 bg-linear-to-r from-orange-600 to-orange-500 rounded-xl p-8 md:p-12 text-center shadow-xl">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Transport Your Equipment?
-            </h3>
-            <p className="text-orange-100 text-lg mb-6 max-w-2xl mx-auto">
-              Contact us today for safe, reliable, and professional heavy equipment transport services
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:03331230531"
-                className="px-8 py-4 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-              <a
-                href="mailto:malikenterprises76@gmail.com"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-all duration-300 inline-flex items-center justify-center gap-2"
-              >
-                <Mail className="w-5 h-5" />
-                Send Email
-              </a>
-            </div>
-          </div>
-        </FadeInWhenVisible>
 
       </div>
     </section>

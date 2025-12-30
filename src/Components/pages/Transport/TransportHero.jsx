@@ -30,11 +30,10 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-10'
-      }`}
+      className={`transition-all duration-1000 ${isVisible
+        ? 'opacity-100 translate-y-0'
+        : 'opacity-0 translate-y-10'
+        }`}
     >
       {children}
     </div>
@@ -44,10 +43,28 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => {
 const TransportHero = () => {
   return (
     <section className="relative min-h-screen bg-white pt-24" id='home'>
-      
+
+         <a
+      href="https://wa.me/923331230531?text=Hello%20I%20am%20interested%20in%20your%20services"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="
+        fixed bottom-5 right-5 z-50
+        flex items-center justify-center
+        w-14 h-14 rounded-full
+       hover:bg-green-600 bg-white
+        shadow-lg hover:scale-110
+        transition-all duration-300
+      "
+    >
+     <img src="/whatsapp.png" alt="" />
+        
+    </a>
+
       {/* Hero Section with Background Image */}
       <div className="relative h-[600px] lg:h-[700px] overflow-hidden">
-        
+
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -63,9 +80,9 @@ const TransportHero = () => {
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="max-w-3xl">
-              
+
               {/* Company Badge */}
-              <div 
+              <div
                 className="inline-flex items-center gap-3 px-5 py-3 bg-orange-600 text-white rounded-full mb-6 animate-fade-in-down"
                 style={{ animationDelay: '0.2s', animationFillMode: 'both' }}
               >
@@ -74,7 +91,7 @@ const TransportHero = () => {
               </div>
 
               {/* Main Heading */}
-              <h1 
+              <h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up"
                 style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
               >
@@ -84,7 +101,7 @@ const TransportHero = () => {
               </h1>
 
               {/* Description */}
-              <p 
+              <p
                 className="text-xl text-gray-300 mb-8 leading-relaxed animate-fade-in-up"
                 style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
               >
@@ -92,47 +109,47 @@ const TransportHero = () => {
               </p>
 
               {/* CTA Buttons */}
-              <div 
+              <div
                 className="flex flex-wrap gap-4 animate-fade-in-up"
                 style={{ animationDelay: '0.8s', animationFillMode: 'both' }}
               ><a href="#services">
-                <button
-  className="
-    px-5 py-3 text-sm
-    sm:px-6 sm:py-3 sm:text-base
-    md:px-8 md:py-4 md:text-lg
-    bg-orange-600 text-white font-semibold
-    rounded-md
-    flex items-center justify-center gap-2
-    transition-all duration-300
-    shadow-md
-    hover:bg-orange-700 hover:shadow-xl
-    active:scale-95 md:hover:scale-105
-  "
->
-  Our Services
-  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-</button>
+                  <button
+                    className="
+                                px-5 py-3 text-sm
+                                sm:px-6 sm:py-3 sm:text-base
+                                md:px-8 md:py-4 md:text-lg
+                                bg-orange-600 text-white font-semibold
+                                rounded-md
+                                flex items-center justify-center gap-2
+                                transition-all duration-300
+                                shadow-md
+                                hover:bg-orange-700 hover:shadow-xl
+                                active:scale-95 md:hover:scale-105
+                              "
+                  >
+                    Our Services
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
 
                 </a>
-                 <a href="#contact">
-                <button
-  className="
-    px-5 py-3 text-sm
-    sm:px-6 sm:py-3 sm:text-base
-    md:px-8 md:py-4 md:text-lg
-    bg-white text-slate-900 font-semibold
-    rounded-md
-    flex items-center justify-center gap-2
-    transition-all duration-300
-    shadow-md
-    hover:bg-gray-100 hover:shadow-xl
-    active:scale-95 md:hover:scale-105
-  "
->
-  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-  Contact Us
-</button>
+                <a href="#contact">
+                  <button
+                    className="
+                                  px-5 py-3 text-sm
+                                  sm:px-6 sm:py-3 sm:text-base
+                                  md:px-8 md:py-4 md:text-lg
+                                  bg-white text-slate-900 font-semibold
+                                  rounded-md
+                                  flex items-center justify-center gap-2
+                                  transition-all duration-300
+                                  shadow-md
+                                  hover:bg-gray-100 hover:shadow-xl
+                                  active:scale-95 md:hover:scale-105
+                                "
+                  >
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Contact Us
+                  </button>
 
                 </a>
               </div>
@@ -148,7 +165,7 @@ const TransportHero = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                
+
                 <FadeInWhenVisible delay={300}>
                   <div className="text-center group cursor-pointer">
                     <div className="text-4xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform duration-300">100+</div>

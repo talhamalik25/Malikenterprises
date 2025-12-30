@@ -65,6 +65,24 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen bg-white pt-24">
 
+       <a
+      href="https://wa.me/923331230531?text=Hello%20I%20am%20interested%20in%20your%20services"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="
+        fixed bottom-5 right-5 z-50
+        flex items-center justify-center
+        w-14 h-14 rounded-full
+       hover:bg-green-600 bg-white
+        shadow-lg hover:scale-110
+        transition-all duration-300
+      "
+    >
+     <img src="/whatsapp.png" alt="" />
+        
+    </a>
+
       {/* Full Width Image Slider with Overlay */}
       <div className="relative h-150 lg:h-175 overflow-hidden">
 

@@ -2,6 +2,32 @@ import React from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 
 const PRODUCTS = [
+   {
+    id: 1,
+    name: "Protective Coverall",
+    category: "Safety Wear",
+    description: "Safety Approved | Industrial Grade",
+    image: "https://plus.unsplash.com/premium_photo-1664301934873-5552967a543f?w=1200",
+    features: ["Full Protection", "Multiple Pockets", "Reinforced Seams"]
+  },
+    {
+    id: 2,
+    name: "Safety Vest",
+    category: "Safety Wear",
+    description: "High Visibility | 100% Polyester",
+    image: "https://media.istockphoto.com/id/1363449652/vector/safety-vest-set.jpg?s=612x612&w=0&k=20&c=ZLeTIP96HG0pOMxuHmpelhPowbZ6IfZt5qAVmH11p10=",
+    features: ["Reflective Strips", "Durable Fabric", "All Weather"]
+  },
+  
+  {
+    id: 3,
+    name: "Uniform Shirt",
+    category: "Workwear",
+    description: "Durable Fabric | Industrial Use",
+    image: "https://media.istockphoto.com/id/1281297067/photo/blank-black-and-white-polo-shirt-mock-up-front-view.jpg?s=612x612&w=0&k=20&c=huUDQsZS9TxUH_SMEyCEYUaEBYuWHp6GJIXCXOco7TU=",
+    features: ["Breathable", "Easy Care", "Custom Branding"]
+  },
+
      {
     id: 1,
     name: "Men's Safety Shoes",
@@ -26,22 +52,6 @@ const PRODUCTS = [
     image: "https://media.istockphoto.com/id/509808366/photo/ear-muff-for-noise-protection-ear.jpg?s=612x612&w=0&k=20&c=I2X9O4ldy4JUOHC2VtFmPaU_aY9bHvy0l04yCekzEiA=",
     features: ["Cushioned Fit", "Adjustable Headband", "Durable"]
   },
-  {
-    id: 4,
-    name: "Safety Vest",
-    category: "Safety Wear",
-    description: "High Visibility | 100% Polyester",
-    image: "https://media.istockphoto.com/id/1363449652/vector/safety-vest-set.jpg?s=612x612&w=0&k=20&c=ZLeTIP96HG0pOMxuHmpelhPowbZ6IfZt5qAVmH11p10=",
-    features: ["Reflective Strips", "Durable Fabric", "All Weather"]
-  },
-  {
-    id: 5,
-    name: "Uniform Shirt",
-    category: "Workwear",
-    description: "Durable Fabric | Industrial Use",
-    image: "https://media.istockphoto.com/id/1281297067/photo/blank-black-and-white-polo-shirt-mock-up-front-view.jpg?s=612x612&w=0&k=20&c=huUDQsZS9TxUH_SMEyCEYUaEBYuWHp6GJIXCXOco7TU=",
-    features: ["Breathable", "Easy Care", "Custom Branding"]
-  },
    {
     id: 6,
     name: "Fire Fighting Suit",
@@ -49,14 +59,6 @@ const PRODUCTS = [
     description: "Heat Resistant | Fire Approved",
     image: "https://media.istockphoto.com/id/1405214281/photo/firefighter-uniforms-these-safety-suits-are-made-of-heat-and-fire-resistant-fabrics.jpg?s=612x612&w=0&k=20&c=FsrbEUgl-Ro0SvolFxevSzP-pSr6gPKkLkF5HaLlCv0=",
     features: ["Flame Resistant", "Thermal Protection", "High Visibility"]
-  },
-  {
-    id: 7,
-    name: "Protective Coverall",
-    category: "Safety Wear",
-    description: "Safety Approved | Industrial Grade",
-    image: "https://plus.unsplash.com/premium_photo-1664301934873-5552967a543f?w=1200",
-    features: ["Full Protection", "Multiple Pockets", "Reinforced Seams"]
   },
   {
     id: 8,
@@ -128,6 +130,23 @@ const PRODUCTS = [
 const ProductPage = () => {
   return (
     <section id="product" className="py-20 bg-gray-50 mt-20">
+       <a
+      href="https://wa.me/923331230531?text=Hello%20I%20am%20interested%20in%20your%20services"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="
+        fixed bottom-5 right-5 z-50
+        flex items-center justify-center
+        w-14 h-14 rounded-full
+       hover:bg-green-600 bg-white
+        shadow-lg hover:scale-110
+        transition-all duration-300
+      "
+    >
+     <img src="/whatsapp.png" alt="" />
+        
+    </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

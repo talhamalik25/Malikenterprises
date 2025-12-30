@@ -3,15 +3,15 @@ import { ArrowRight, CheckCircle, } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PRODUCTS = [
-  {
+    {
     id: 1,
-    name: "Men's Safety Shoes",
-    category: "Safety Footwear",
-    description: "Premium Leather | Safety Grip Sole",
-    image: "https://media.istockphoto.com/id/466843741/photo/safety-boots-isolated-on-white.jpg?s=612x612&w=0&k=20&c=KlATr7zb7oZH6m_KIoU2gYxmIp95PKVYL-Y5ldZeh20=",
-    features: ["Steel Toe Cap", "Anti-Slip Sole", "Water Resistant"]
+    name: "Protective Coverall",
+    category: "Safety Wear",
+    description: "Safety Approved | Industrial Grade",
+    image: "https://plus.unsplash.com/premium_photo-1664301934873-5552967a543f?w=1200",
+    features: ["Full Protection", "Multiple Pockets", "Reinforced Seams"]
   },
-  {
+    {
     id: 2,
     name: "Safety Vest",
     category: "Safety Wear",
@@ -19,6 +19,7 @@ const PRODUCTS = [
     image: "https://media.istockphoto.com/id/1363449652/vector/safety-vest-set.jpg?s=612x612&w=0&k=20&c=ZLeTIP96HG0pOMxuHmpelhPowbZ6IfZt5qAVmH11p10=",
     features: ["Reflective Strips", "Durable Fabric", "All Weather"]
   },
+  
   {
     id: 3,
     name: "Uniform Shirt",
@@ -27,30 +28,7 @@ const PRODUCTS = [
     image: "https://media.istockphoto.com/id/1281297067/photo/blank-black-and-white-polo-shirt-mock-up-front-view.jpg?s=612x612&w=0&k=20&c=huUDQsZS9TxUH_SMEyCEYUaEBYuWHp6GJIXCXOco7TU=",
     features: ["Breathable", "Easy Care", "Custom Branding"]
   },
-  {
-    id: 4,
-    name: "Protective Coverall",
-    category: "Safety Wear",
-    description: "Safety Approved | Industrial Grade",
-    image: "https://plus.unsplash.com/premium_photo-1664301934873-5552967a543f?w=1200",
-    features: ["Full Protection", "Multiple Pockets", "Reinforced Seams"]
-  },
-  {
-    id: 5,
-    name: "Industrial Helmet",
-    category: "Head Protection",
-    description: "Impact Resistant | Adjustable Fit",
-    image: "https://media.istockphoto.com/id/171326814/photo/yellow-hard-hat-on-white-with-clipping-path.jpg?s=612x612&w=0&k=20&c=xbpjXBkKO8KlSiuZz8bxTmKKX0OlcqWyE7n3A1F6lUg=",
-    features: ["Hard Shell", "Ventilation System", "Adjustable Straps"]
-  },
-  {
-    id: 6,
-    name: "Work Gloves",
-    category: "Hand Protection",
-    description: "Cut Resistant | Heavy Duty",
-    image: "https://media.istockphoto.com/id/874114444/photo/leather-work-glove.webp?a=1&b=1&s=612x612&w=0&k=20&c=2_1XiMItJ6rxuodNJqkVxrekFkhcffbH43R_vboooQs=",
-    features: ["Cut Protection", "Grip Technology", "Durable Material"]
-  }
+
 ];
 
 // Fade In Animation Component

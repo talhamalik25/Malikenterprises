@@ -50,21 +50,6 @@ const Footer = () => {
               We are a leading manufacturer of uniforms & allied products working with several organizations with great reputation.
             </p>
 
-            {/* Social Media */}
-            <div className="flex gap-3">
-              <Link to="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link to="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link to="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                <Instagram className="w-5 h-5" />
-              </Link>
-              <Link to="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
-                <Linkedin className="w-5 h-5" />
-              </Link>
-            </div>
           </div>
 
           {/* Categories */}
@@ -104,7 +89,7 @@ const Footer = () => {
             </ul>
 
             <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
-              <h4 className="font-bold mb-2">Our Second Company</h4>
+              <h4 className="font-bold mb-2">Under The Super vision</h4>
 
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-12 h-12 rounded flex items-center justify-center">

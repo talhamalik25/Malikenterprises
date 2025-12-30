@@ -295,39 +295,6 @@ const TransportContactForm = () => {
               </div>
             </FadeInWhenVisible>
 
-            <FadeInWhenVisible delay={400}>
-              <div className="bg-gray-50 rounded-xl p-8 border-2 border-gray-100">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Direct Contact</h3>
-                <div className="space-y-4">
-                  <a 
-                    href="tel:03331230531"
-                    className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors duration-300">
-                      <Phone className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-600 font-medium">Call Us</div>
-                      <div className="text-lg font-bold text-slate-900">0333-1230531</div>
-                    </div>
-                  </a>
-                  
-                  <a 
-                    href="mailto:arifmaliknsons@gmail.com"
-                    className="flex items-center gap-4 p-4 bg-white rounded-lg hover:shadow-md transition-shadow duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors duration-300">
-                      <Mail className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-600 font-medium">Email Us</div>
-                      <div className="text-sm font-bold text-slate-900 break-all">arifmaliknsons@gmail.com</div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </FadeInWhenVisible>
-
           </div>
 
         </div>

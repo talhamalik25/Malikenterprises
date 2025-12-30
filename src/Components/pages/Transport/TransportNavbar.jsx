@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { id: 'faqs', name: 'FAQs', path: '#faqs' },
   { id: 'location', name: 'Location', path: '#location' },
   { id: 'contact', name: 'Contact', path: '#contact' },
-  { id: 'malik-enterprises', name: 'Main Website', path: '/', isExternal: true }
+  { id: 'malik-enterprises', name: 'Malik-Enterprices', path: '/', isExternal: true }
 ];
 
 const useScrollSpy = (sectionIds) => {
@@ -87,10 +87,6 @@ const TransportNavbar = () => {
               <a href="tel:03331230531" className="flex items-center gap-2 hover:text-orange-100 transition-colors">
                 <Phone className="w-4 h-4" />
                 <span className="hidden sm:inline font-medium">0333-1230531</span>
-              </a>
-              <a href="mailto:arifmaliknsons@gmail.com" className="flex items-center gap-2 hover:text-orange-100 transition-colors">
-                <Mail className="w-4 h-4" />
-                <span className="hidden md:inline font-medium text-white">arifmaliknsons@gmail.com</span>
               </a>
             </div>
             <div className="text-sm font-medium">

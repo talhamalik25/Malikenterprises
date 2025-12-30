@@ -45,22 +45,7 @@ const TransportFooter = () => {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Professional heavy equipment transport services with safety and reliability. Serving all major cities across Pakistan.
             </p>
-            
-            {/* Social Media */}
-            <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-300">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-300">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-300">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-orange-600 transition-colors duration-300">
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </div>
+          
           </div>
 
           {/* Our Services */}
@@ -100,7 +85,7 @@ const TransportFooter = () => {
 
             {/* Parent Company */}
             <div className="bg-slate-800 rounded-lg p-4 border border-slate-700">
-              <h4 className="font-bold mb-2">Our Parent Company</h4>
+              <h4 className="font-bold mb-2">Our Second Company</h4>
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-8 h-8 rounded flex items-center justify-center">
                   <img src="/favicon.png" alt="Logo" className='w-full h-full'/>
@@ -135,19 +120,6 @@ const TransportFooter = () => {
                 <div>
                   <p className="text-sm text-gray-500">Phone</p>
                   <p className="font-semibold">0333-1230531</p>
-                </div>
-              </a>
-
-              <a 
-                href="mailto:arifmaliknsons@gmail.com"
-                className="flex items-start gap-3 text-gray-400 hover:text-orange-400 transition-colors duration-300 group"
-              >
-                <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center group-hover:bg-orange-600 transition-colors duration-300 flex-shrink-0">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">Email</p>
-                  <p className="font-semibold text-sm break-all">arifmaliknsons@gmail.com</p>
                 </div>
               </a>
 

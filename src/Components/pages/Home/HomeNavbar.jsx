@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { id: 'product', name: 'Products', path: '/product', isExternal: true },
   { id: 'clients', name: 'Clients', path: '#clients' },
   { id: 'contact', name: 'Contact', path: '#contact' },
-  { id: 'transport', name: 'Transport', path: '/transport', isExternal: true }
+  { id: 'Arif Malik & Sons', name: 'Arif Malik & Sons', path: '/transport', isExternal: true }
 ];
 
 const useScrollSpy = (sectionIds) => {
@@ -116,7 +116,7 @@ const HomeNavbar = () => {
                 >
                   Malik Enterprises
                 </button>
-                <p className="text-xs text-gray-600 font-medium">Since 2008</p>
+                <p className="text-xs text-gray-600 font-medium">Trusted supplier of uniforms</p>
               </div>
             </div>
           </div>
@@ -125,12 +125,13 @@ const HomeNavbar = () => {
           <nav className='hidden lg:flex items-center gap-8'>
             {NAV_LINKS.map((link) => (
               link.isExternal ? (
+                
                 <Link
                   key={link.id}
                   to={link.path}
                   className="text-base font-semibold transition-all duration-300 text-gray-700 hover:text-blue-600"
                 >
-                  {link.name}
+                  {link.name} 
                 </Link>
               ) : (
                 <button

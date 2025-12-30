@@ -163,34 +163,6 @@ const LocationSection = () => {
 
         </div>
 
-        {/* Bottom CTA */}
-        <FadeInWhenVisible delay={500}>
-          <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl p-8 md:p-12 text-center shadow-xl">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Place an Order?
-            </h3>
-            <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-              Contact us today for bulk orders, custom requirements, or any inquiries about our products
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:03331230531"
-                className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Call Now
-              </a>
-              <a
-                href="mailto:malikenterprises76@gmail.com"
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center gap-2"
-              >
-                <Mail className="w-5 h-5" />
-                Send Email
-              </a>
-            </div>
-          </div>
-        </FadeInWhenVisible>
-
       </div>
     </section>
   );

@@ -61,7 +61,7 @@ const ProductNavbar = () => {
                 >
                   Malik Enterprises
                 </Link>
-                <p className="text-xs text-gray-600 font-medium">Since 2008</p>
+                <p className="text-xs text-gray-600 font-medium">Trusted supplier of uniforms</p>
               </div>
             </div>
           </div>
