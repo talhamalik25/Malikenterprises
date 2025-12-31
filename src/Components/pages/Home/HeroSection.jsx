@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
 
 // Hero Images
 const HERO_IMAGES = [
@@ -51,6 +49,8 @@ const FadeInUp = ({ children, delay = 0 }) => {
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,6 +61,31 @@ const HeroSection = () => {
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
+
+  // Touch handlers for swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    } else if (distance < -minSwipeDistance) {
+      prevSlide();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   return (
     <section id="home" className="relative min-h-screen bg-white pt-24">
@@ -84,7 +109,12 @@ const HeroSection = () => {
     </a>
 
       {/* Full Width Image Slider with Overlay */}
-      <div className="relative h-150 lg:h-175 overflow-hidden">
+      <div 
+        className="relative h-150 lg:h-175 overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
 
         {/* Images */}
         {HERO_IMAGES.map((image, index) => (
@@ -138,7 +168,8 @@ const HeroSection = () => {
               <div
                 className="flex flex-wrap gap-4 animate-fade-in-up"
                 style={{ animationDelay: '0.8s', animationFillMode: 'both' }}
-              > <Link to="/Product">
+              >
+                <a href="#products">
                   <button
                     className="
                            px-5 py-3 text-sm
@@ -156,8 +187,7 @@ const HeroSection = () => {
                     View Products
                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
-
-                </Link>
+                </a>
                 <a href="#contact">
                   <button
                     className="
@@ -175,10 +205,8 @@ const HeroSection = () => {
                   >
                     <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                     Contact Us
-                  </button></a>
-
-
-
+                  </button>
+                </a>
               </div>
 
             </div>
