@@ -51,28 +51,41 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+      if (!isDragging) {
+        setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+      }
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isDragging]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_IMAGES.length) % HERO_IMAGES.length);
 
-  // Touch handlers for swipe
+  // Touch handlers for swipe with visible drag effect
   const handleTouchStart = (e) => {
     setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
   };
 
   const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!touchStart) return;
+    const currentTouch = e.targetTouches[0].clientX;
+    const diff = currentTouch - touchStart;
+    setDragOffset(diff);
+    setTouchEnd(currentTouch);
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
     
     const distance = touchStart - touchEnd;
     const minSwipeDistance = 50;
@@ -83,6 +96,8 @@ const HeroSection = () => {
       prevSlide();
     }
 
+    setIsDragging(false);
+    setDragOffset(0);
     setTouchStart(0);
     setTouchEnd(0);
   };
@@ -117,21 +132,39 @@ const HeroSection = () => {
       >
 
         {/* Images */}
-        {HERO_IMAGES.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-              }`}
-          >
-            <img
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60"></div>
-          </div>
-        ))}
+        {HERO_IMAGES.map((image, index) => {
+          const isActive = index === currentSlide;
+          const isPrev = index === (currentSlide - 1 + HERO_IMAGES.length) % HERO_IMAGES.length;
+          const isNext = index === (currentSlide + 1) % HERO_IMAGES.length;
+          
+          let transform = 'translateX(100%)';
+          if (isActive) {
+            transform = `translateX(${isDragging ? dragOffset : 0}px)`;
+          } else if (isPrev) {
+            transform = `translateX(${isDragging ? dragOffset - window.innerWidth : '-100%'})`;
+          } else if (isNext) {
+            transform = `translateX(${isDragging ? dragOffset + window.innerWidth : '100%'})`;
+          }
+
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 ${isDragging ? '' : 'transition-all duration-700 ease-out'}`}
+              style={{ 
+                transform,
+                opacity: (isActive || (isDragging && (isPrev || isNext))) ? 1 : 0
+              }}
+            >
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover pointer-events-none"
+              />
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/60"></div>
+            </div>
+          );
+        })}
 
         {/* Content Over Image */}
         <div className="absolute inset-0 flex items-center">
